@@ -16,7 +16,8 @@ const ScheduleView: React.FC<IScheduleView> = ({
             <div>
                 Lista pracownikow
             </div>
-            <ScheduleTable />
+            <ScheduleTable
+                schedule={schedule} />
         </div>
     )
 }
