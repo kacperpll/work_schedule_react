@@ -35,20 +35,20 @@ const ScheduleTable: React.FC<IScheduleView> = ({
     )
 
     return (
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th onClick={() => toggleDay("PN")}>Poniedziałek</th>
-                    <th onClick={() => toggleDay("WT")}>Wtorek</th>
-                    <th onClick={() => toggleDay("SR")}>Środa</th>
-                    <th onClick={() => toggleDay("CZ")}>Czwartek</th>
-                    <th onClick={() => toggleDay("PT")}>Piątek</th>
-                    <th onClick={() => toggleDay("SO")}>Sobota</th>
-                    <th onClick={() => toggleDay("ND")}>Niedziela</th>
-                </tr>
-            </thead>
-            <tbody>
+        <div className={styles.table}>
+            <div className={styles.thead}>
+                <div className={styles.tr}>
+                    <div className={styles.th}></div>
+                    <div className={`${styles.td} ${styles.th}`} onClick={() => toggleDay("PN")}>Poniedziałek</div>
+                    <div className={`${styles.td} ${styles.th}`} onClick={() => toggleDay("WT")}>Wtorek</div>
+                    <div className={`${styles.td} ${styles.th}`} onClick={() => toggleDay("SR")}>Środa</div>
+                    <div className={`${styles.td} ${styles.th}`} onClick={() => toggleDay("CZ")}>Czwartek</div>
+                    <div className={`${styles.td} ${styles.th}`} onClick={() => toggleDay("PT")}>Piątek</div>
+                    <div className={`${styles.td} ${styles.th}`} onClick={() => toggleDay("SO")}>Sobota</div>
+                    <div className={`${styles.td} ${styles.th}`} onClick={() => toggleDay("ND")}>Niedziela</div>
+                </div>
+            </div>
+            <div className={styles.tbody}>
                 {
                     selectedEmployee
                         ? schedule[0].hours.map((element: IWorkingHour, index) => (
@@ -71,20 +71,22 @@ const ScheduleTable: React.FC<IScheduleView> = ({
                             </tr>
                           ))
                         : schedule[0].hours.map((element: IWorkingHour, index) => (
-                            <tr>
-                                <th>{`${element.hour}`}</th>
-                                <td className={getScheduleClassName("PN")}>{getCellValue(0, index)}</td>
-                                <td className={getScheduleClassName("WT")}>{getCellValue(1, index)}</td>
-                                <td className={getScheduleClassName("SR")}>{getCellValue(2, index)}</td>
-                                <td className={getScheduleClassName("CZ")}>{getCellValue(3, index)}</td>
-                                <td className={getScheduleClassName("PT")}>{getCellValue(4, index)}</td>
-                                <td className={getScheduleClassName("SO")}>{getCellValue(5, index)}</td>
-                                <td className={getScheduleClassName("ND")}>{getCellValue(6, index)}</td>
-                            </tr>
+                            <div className={styles.tr}>
+                                <div className={styles.th}>
+                                    {`${element.hour < 10 ? "0" : ""}${element.hour}:00 - ${element.hour < 9 ? "0" : ""}${element.hour + 1}:00`}
+                                </div>
+                                <div className={`${getScheduleClassName("PN")} ${styles.td}`}>{getCellValue(0, index)}</div>
+                                <div className={`${getScheduleClassName("WT")} ${styles.td}`}>{getCellValue(1, index)}</div>
+                                <div className={`${getScheduleClassName("SR")} ${styles.td}`}>{getCellValue(2, index)}</div>
+                                <div className={`${getScheduleClassName("CZ")} ${styles.td}`}>{getCellValue(3, index)}</div>
+                                <div className={`${getScheduleClassName("PT")} ${styles.td}`}>{getCellValue(4, index)}</div>
+                                <div className={`${getScheduleClassName("SO")} ${styles.td}`}>{getCellValue(5, index)}</div>
+                                <div className={`${getScheduleClassName("ND")} ${styles.td}`}>{getCellValue(6, index)}</div>
+                            </div>
                           ))
                 }
-            </tbody>
-        </table>
+            </div>
+        </div>
     )
 }
 
