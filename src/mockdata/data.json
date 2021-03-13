@@ -1,0 +1,632 @@
+{
+    "schedule": [{
+        "day": "Poniedzialek",
+        "hours": [
+            {
+                "hour": 6,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 7,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 8,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 9,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 10,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 11,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 12,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 13,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 14,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 15,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 16,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 17,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 18,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 19,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 20,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 21,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 22,
+                "require": 5,
+                "employees": {}
+            }
+        ]
+    },
+    {
+        "day": "Wtorek",
+        "hours": [
+            {
+                "hour": 6,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 7,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 8,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 9,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 10,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 11,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 12,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 13,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 14,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 15,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 16,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 17,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 18,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 19,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 20,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 21,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 22,
+                "require": 5,
+                "employees": {}
+            }
+        ]
+    },
+    {
+        "day": "Środa",
+        "hours": [
+            {
+                "hour": 6,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 7,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 8,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 9,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 10,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 11,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 12,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 13,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 14,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 15,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 16,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 17,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 18,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 19,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 20,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 21,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 22,
+                "require": 5,
+                "employees": {}
+            }
+        ]
+    },
+    {
+        "day": "Czwartek",
+        "hours": [
+            {
+                "hour": 6,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 7,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 8,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 9,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 10,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 11,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 12,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 13,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 14,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 15,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 16,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 17,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 18,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 19,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 20,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 21,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 22,
+                "require": 5,
+                "employees": {}
+            }
+        ]
+    },
+    {
+        "day": "Piątek",
+        "hours": [
+            {
+                "hour": 6,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 7,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 8,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 9,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 10,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 11,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 12,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 13,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 14,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 15,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 16,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 17,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 18,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 19,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 20,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 21,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 22,
+                "require": 5,
+                "employees": {}
+            }
+        ]
+    },
+    {
+        "day": "Sobota",
+        "hours": [
+            {
+                "hour": 6,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 7,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 8,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 9,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 10,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 11,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 12,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 13,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 14,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 15,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 16,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 17,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 18,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 19,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 20,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 21,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 22,
+                "require": 5,
+                "employees": {}
+            }
+        ]
+    },
+    {
+        "day": "Niedziela",
+        "hours": [
+            {
+                "hour": 6,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 7,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 8,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 9,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 10,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 11,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 12,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 13,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 14,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 15,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 16,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 17,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 18,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 19,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 20,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 21,
+                "require": 5,
+                "employees": {}
+            },
+            {
+                "hour": 22,
+                "require": 5,
+                "employees": {}
+            }
+        ]
+    }]
+}

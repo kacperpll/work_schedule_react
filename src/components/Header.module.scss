@@ -1,0 +1,43 @@
+.header {
+    background: #FFD1B2;
+    display: flex;
+    height: 125px;
+    padding: 20px 50px;
+    align-items: center;
+    font-size: 1.5rem;
+    justify-content: space-between;
+}
+
+.header_left {
+    display: flex;
+    align-items: center;
+}
+
+.headerLogo_container {
+    position: relative;
+    width: 150px;
+    height: 100px;
+    font-weight: bold;
+
+    .headerLogo_letter {
+        position: absolute;
+        top: -9px;
+        left: 0;
+        z-index: 0;
+        color: #FF6803;
+        font-size: 80px;
+    }
+
+    .headerLogo_word {
+        position: absolute;
+        top: 17px;
+        left: 41px;
+        z-index: 1;
+        color: #3D3D3D;
+        font-size: 46px;
+    }
+}
+
+.headerUser {
+    margin-left: 30px;
+}
