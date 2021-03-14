@@ -3,7 +3,9 @@ import React from "react";
 export interface IScheduleView {
     schedule: IWorkingDay[],
     setSchedule: React.Dispatch<React.SetStateAction<IWorkingDay[]>>,
-    employees: IEmployee[]
+    employees: IEmployee[],
+    isModalVisible: boolean,
+    setModalVisibility: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export interface IScheduleTable {
@@ -25,11 +27,6 @@ export interface IWorkingHour {
 
 export interface IEmployee {
     id: string,
-    name: string
-}
-
-export interface IWeekDay {
-    key: string,
     name: string
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Header.module.scss'
-import { IHeader } from '../models/Header.models'
+import { IHeader } from '../../models/Header.models'
 
 const Header: React.FC<IHeader> = ({
     user
