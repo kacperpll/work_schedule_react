@@ -1,0 +1,32 @@
+{
+    "employees": [
+        {
+            "id": "1",
+            "name": "Kacper Duniewicz"
+        },
+        {
+            "id": "2",
+            "name": "Marek Kowalski"
+        },
+        {
+            "id": "3",
+            "name": "Dariusz Zieleń"
+        },
+        {
+            "id": "4",
+            "name": "Michał Brąz"
+        },
+        {
+            "id": "5",
+            "name": "Kamil Łaski"
+        },
+        {
+            "id": "6",
+            "name": "Przemysław Dąb"
+        },
+        {
+            "id": "7",
+            "name": "Adrian Nowak"
+        }
+    ]
+}

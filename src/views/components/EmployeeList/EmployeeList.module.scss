@@ -1,0 +1,38 @@
+.employeeListWrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+
+    p {
+        margin: 8px 0;
+    }
+}
+
+.employeeList {
+    display: flex;
+    flex: 1;
+}
+
+.list {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    border: 1px solid #707070;
+}
+
+.listItem {
+    margin: 0 3px;
+    padding: 8px 0;
+    border-bottom: 1px solid #b9b9b9;
+    cursor: pointer;
+
+    &:hover {
+        background: #b9b9b926;
+    }
+}
+
+.selectedListItem {
+    background: #FFD1B2;
+}

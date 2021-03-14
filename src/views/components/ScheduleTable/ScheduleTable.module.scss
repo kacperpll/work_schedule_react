@@ -1,0 +1,80 @@
+.table {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 5;
+}
+
+.thead, .tbody {
+    width: 100%;
+}
+
+.tr {
+    width: 100%;
+    display: flex;
+    min-height: 35px;
+    max-height: 90px;
+}
+
+.td {
+    flex: 1;
+    margin: 2px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background: aliceblue;
+    cursor: pointer;
+}
+
+.th {
+    min-width: 100px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.expanded {
+    flex: none;
+    animation: expand 0.8s forwards;
+}
+
+@keyframes expand {
+    from {
+        width: 50px;
+        color: rgba(0, 0, 0, 0.0);
+        height: 31px;
+    }
+    to {
+        width: calc(100% - 100px);
+        color: rgba(0, 0, 0, 1);
+        height: auto;
+    }
+}
+
+.notIncluded {
+    background: grey;
+}
+
+.full {
+    background:#08FF00;
+}
+
+.notFull {
+    background: #FFA200;
+}
+
+.badAmount {
+    background: #FF0000;
+}
+
+.selectedListItem {
+    background: #FFD1B2;
+}
+
+.td.th:hover {
+    background: #b9b9b926;
+}
