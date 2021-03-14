@@ -1,0 +1,14 @@
+.schedule {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 50px;
+}
+
+.top, .bottom {
+    display: flex;
+    width: 100%;
+}
+
+.top {
+    justify-content: center;
+}

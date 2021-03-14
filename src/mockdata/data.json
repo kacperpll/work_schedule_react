@@ -5,87 +5,92 @@
             {
                 "hour": 6,
                 "require": 5,
-                "employees": {}
+                "employees": [
+                    {
+                        "id": 1,
+                        "name": "test"
+                    }
+                ]
             },
             {
                 "hour": 7,
-                "require": 5,
-                "employees": {}
+                "require": 6,
+                "employees": []
             },
             {
                 "hour": 8,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 9,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 10,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 11,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 12,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 13,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 14,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 15,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 16,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 17,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 18,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 19,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 20,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 21,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 22,
                 "require": 5,
-                "employees": {}
+                "employees": []
             }
         ]
     },
@@ -95,87 +100,87 @@
             {
                 "hour": 6,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 7,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 8,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 9,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 10,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 11,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 12,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 13,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 14,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 15,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 16,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 17,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 18,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 19,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 20,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 21,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 22,
                 "require": 5,
-                "employees": {}
+                "employees": []
             }
         ]
     },
@@ -185,87 +190,87 @@
             {
                 "hour": 6,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 7,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 8,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 9,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 10,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 11,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 12,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 13,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 14,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 15,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 16,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 17,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 18,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 19,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 20,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 21,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 22,
                 "require": 5,
-                "employees": {}
+                "employees": []
             }
         ]
     },
@@ -275,87 +280,87 @@
             {
                 "hour": 6,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 7,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 8,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 9,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 10,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 11,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 12,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 13,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 14,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 15,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 16,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 17,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 18,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 19,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 20,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 21,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 22,
                 "require": 5,
-                "employees": {}
+                "employees": []
             }
         ]
     },
@@ -365,87 +370,87 @@
             {
                 "hour": 6,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 7,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 8,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 9,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 10,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 11,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 12,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 13,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 14,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 15,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 16,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 17,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 18,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 19,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 20,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 21,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 22,
                 "require": 5,
-                "employees": {}
+                "employees": []
             }
         ]
     },
@@ -455,87 +460,87 @@
             {
                 "hour": 6,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 7,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 8,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 9,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 10,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 11,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 12,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 13,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 14,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 15,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 16,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 17,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 18,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 19,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 20,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 21,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 22,
                 "require": 5,
-                "employees": {}
+                "employees": []
             }
         ]
     },
@@ -545,87 +550,87 @@
             {
                 "hour": 6,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 7,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 8,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 9,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 10,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 11,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 12,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 13,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 14,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 15,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 16,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 17,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 18,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 19,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 20,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 21,
                 "require": 5,
-                "employees": {}
+                "employees": []
             },
             {
                 "hour": 22,
                 "require": 5,
-                "employees": {}
+                "employees": []
             }
         ]
     }]
