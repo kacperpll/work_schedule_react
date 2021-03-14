@@ -1,13 +1,19 @@
-import React, { useState, useEffect } from 'react'
-import { IWorkingHour, IScheduleView, IEmployee, IWorkingDay, IWeekDay } from '../../../models/ScheduleView.models'
+import React, { useState } from 'react'
+import {
+    IWorkingHour,
+    IEmployee,
+    IWorkingDay,
+    IWeekDay,
+    IScheduleTable
+} from '../../../models/ScheduleView.models'
 import styles from './ScheduleTable.module.scss'
 
-const ScheduleTable: React.FC<IScheduleView> = ({
+const ScheduleTable: React.FC<IScheduleTable> = ({
     schedule,
-    setSchedule
+    setSchedule,
+    selectedEmployee
 }) => {
     const [expandedDay, setExpandedDay] = useState<string>("")
-    const [selectedEmployee, setSelectedEmployee] = useState<IEmployee>()
 
     const allWeekDays: IWeekDay[] = [
         {
@@ -53,8 +59,8 @@ const ScheduleTable: React.FC<IScheduleView> = ({
     const getEmployeeClassName = (dayNumber: number, index: number, employeeId: number) => {
         return (
             checkEmployeeWorkStatus(dayNumber, index, employeeId)
-                ? styles.selected
-                : styles.full
+                ? styles.full
+                : styles.notIncluded
         )
     }
 
@@ -66,6 +72,12 @@ const ScheduleTable: React.FC<IScheduleView> = ({
 
     const getCellValue = (dayNumber: number, index: number) => (
         `${amountOfEmployees(dayNumber, index)} / ${requireEmployees(dayNumber, index)}`
+    )
+
+    const getEmployeeInHour = (dayNumber: number, index: number) => (
+        `${schedule[dayNumber].hours[index].employees.map((employee: IEmployee) => (
+            ` ${employee.name}`
+        ))}`
     )
 
     const setCellColor = (dayNumber: number, index: number) => (
@@ -125,12 +137,14 @@ const ScheduleTable: React.FC<IScheduleView> = ({
                     selectedEmployee
                         ? schedule[0].hours.map((element: IWorkingHour, index) => (
                             <div className={styles.tr}>
-                                <div className={styles.th}>{`${element.hour}`}</div>
+                                <div className={styles.th}>
+                                    {`${element.hour < 10 ? "0" : ""}${element.hour}:00 - ${element.hour < 9 ? "0" : ""}${element.hour + 1}:00`}
+                                </div>
                                 {allWeekDays.map((weekDay: IWeekDay, weekDayIndex: number) => (
                                     <div
                                         className={`${getEmployeeClassName(weekDayIndex, index, selectedEmployee.id)} ${styles.td}`}
                                         onClick={() => toggleHour(weekDayIndex, index)}>
-                                            text
+                                            {getCellValue(weekDayIndex, index)}
                                     </div>
                                 )) as React.HTMLAttributes<HTMLDivElement>}
                             </div>
@@ -141,7 +155,16 @@ const ScheduleTable: React.FC<IScheduleView> = ({
                                     {`${element.hour < 10 ? "0" : ""}${element.hour}:00 - ${element.hour < 9 ? "0" : ""}${element.hour + 1}:00`}
                                 </div>
                                 {allWeekDays.map((weekDay: IWeekDay, weekDayIndex: number) => (
-                                    <div className={`${getScheduleClassName(weekDay.key)} ${styles.td} ${setCellColor(weekDayIndex, index)}`}>{getCellValue(weekDayIndex, index)}</div>
+                                    <div
+                                        key={weekDayIndex}
+                                        className={`${getScheduleClassName(weekDay.key)} ${styles.td} ${setCellColor(weekDayIndex, index)}`}>
+                                            {expandedDay
+                                                ? expandedDay === weekDay.key
+                                                    ? getEmployeeInHour(weekDayIndex, index)
+                                                    : ""
+                                                : getCellValue(weekDayIndex, index)
+                                            }
+                                    </div>
                                 )) as React.HTMLAttributes<HTMLDivElement>}
                             </div>
                           ))

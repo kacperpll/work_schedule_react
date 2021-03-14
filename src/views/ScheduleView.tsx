@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ScheduleTable from './components/ScheduleTable/ScheduleTable'
-import { IScheduleView } from '../models/ScheduleView.models'
+import { IScheduleView, IEmployee } from '../models/ScheduleView.models'
 import EmployeeList from './components/EmployeeList/EmployeeList'
 import styles from './ScheduleView.module.scss'
 
@@ -9,8 +9,7 @@ const ScheduleView: React.FC<IScheduleView> = ({
     setSchedule,
     employees
 }) => {
-
-    console.log("schedule", schedule)
+    const [selectedEmployee, setSelectedEmployee] = useState<IEmployee | null>(null)
 
     return (
         <div className={styles.schedule}>
@@ -19,10 +18,13 @@ const ScheduleView: React.FC<IScheduleView> = ({
             </div>
             <div className={styles.bottom}>
                 <EmployeeList
-                    employees={employees}/>
+                    employees={employees}
+                    selectedEmployee={selectedEmployee}
+                    setSelectedEmployee={setSelectedEmployee} />
                 <ScheduleTable
                     schedule={schedule}
-                    setSchedule={setSchedule} />
+                    setSchedule={setSchedule}
+                    selectedEmployee={selectedEmployee} />
             </div>
         </div>
     )

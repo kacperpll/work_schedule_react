@@ -3,7 +3,13 @@ import React from "react";
 export interface IScheduleView {
     schedule: IWorkingDay[],
     setSchedule: React.Dispatch<React.SetStateAction<IWorkingDay[]>>,
-    employees?: IEmployee[]
+    employees: IEmployee[]
+}
+
+export interface IScheduleTable {
+    schedule: IWorkingDay[],
+    setSchedule: React.Dispatch<React.SetStateAction<IWorkingDay[]>>,
+    selectedEmployee: IEmployee | null
 }
 
 export interface IWorkingDay {
@@ -25,4 +31,10 @@ export interface IEmployee {
 export interface IWeekDay {
     key: string,
     name: string
+}
+
+export interface IEmployeeList {
+    employees: IEmployee[],
+    selectedEmployee: IEmployee | null,
+    setSelectedEmployee: React.Dispatch<React.SetStateAction<IEmployee | null>>,
 }
