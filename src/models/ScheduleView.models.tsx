@@ -24,7 +24,7 @@ export interface IWorkingHour {
 }
 
 export interface IEmployee {
-    id: number,
+    id: string,
     name: string
 }
 

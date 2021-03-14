@@ -46,10 +46,12 @@
     from {
         width: 50px;
         color: rgba(0, 0, 0, 0.0);
+        height: 31px;
     }
     to {
         width: calc(100% - 100px);
         color: rgba(0, 0, 0, 1);
+        height: auto;
     }
 }
 

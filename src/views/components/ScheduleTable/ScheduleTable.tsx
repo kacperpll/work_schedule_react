@@ -46,27 +46,13 @@ const ScheduleTable: React.FC<IScheduleTable> = ({
         }
     ]
 
-    const toggleDay = (day: string) => {
-        if (expandedDay === day) {
-            setExpandedDay("")
-        } else {
-            setExpandedDay(day)
-        }
-    }
-
     const getScheduleClassName = (day: string) => expandedDay === day ? styles.expanded : expandedDay && styles.hidden
 
-    const getEmployeeClassName = (dayNumber: number, index: number, employeeId: number) => {
+    const getEmployeeClassName = (dayNumber: number, index: number, employeeId: string) => {
         return (
             checkEmployeeWorkStatus(dayNumber, index, employeeId)
                 ? styles.full
                 : styles.notIncluded
-        )
-    }
-
-    const checkEmployeeWorkStatus = (dayNumber: number, index: number, employeeId: number) => {
-        return (
-            schedule[dayNumber].hours[index].employees.map((employee: IEmployee) => employee.id).includes(employeeId)
         )
     }
 
@@ -89,6 +75,12 @@ const ScheduleTable: React.FC<IScheduleTable> = ({
                 ? styles.badAmount
                 : styles.notFull
     )
+
+    const checkEmployeeWorkStatus = (dayNumber: number, index: number, employeeId: string) => {
+        return (
+            schedule[dayNumber].hours[index].employees.map((employee: IEmployee) => employee.id).includes(employeeId)
+        )
+    }
 
     const toggleHour = (dayNumber: number, index: number) => {
         if (selectedEmployee) {
@@ -118,6 +110,14 @@ const ScheduleTable: React.FC<IScheduleTable> = ({
             ]
 
             setSchedule(newSchedule)
+        }
+    }
+
+    const toggleDay = (day: string) => {
+        if (expandedDay === day) {
+            setExpandedDay("")
+        } else {
+            setExpandedDay(day)
         }
     }
 
