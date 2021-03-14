@@ -75,9 +75,11 @@ const ScheduleTable: React.FC<IScheduleTable> = ({
     )
 
     const getEmployeeInHour = (dayNumber: number, index: number) => (
-        `${schedule[dayNumber].hours[index].employees.map((employee: IEmployee) => (
-            ` ${employee.name}`
-        ))}`
+        schedule[dayNumber].hours[index].employees.length
+            ?   schedule[dayNumber].hours[index].employees.map((employee: IEmployee) => (
+                    ` ${employee.name}`
+                ))
+            : "Brak pracowników"
     )
 
     const setCellColor = (dayNumber: number, index: number) => (
