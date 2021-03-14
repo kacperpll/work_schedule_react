@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { IWorkingHour, IScheduleView, IEmployee, IWorkingDay } from '../../../models/ScheduleView.models'
+import { IWorkingHour, IScheduleView, IEmployee, IWorkingDay, IWeekDay } from '../../../models/ScheduleView.models'
 import styles from './ScheduleTable.module.scss'
 
 const ScheduleTable: React.FC<IScheduleView> = ({
@@ -7,7 +7,38 @@ const ScheduleTable: React.FC<IScheduleView> = ({
     setSchedule
 }) => {
     const [expandedDay, setExpandedDay] = useState<string>("")
-    const [selectedEmployee, setSelectedEmployee] = useState<IEmployee | null>(null)
+    const [selectedEmployee, setSelectedEmployee] = useState<IEmployee>()
+
+    const allWeekDays: IWeekDay[] = [
+        {
+            key: "PN",
+            name: "Poniedzialek"
+        },
+        {
+            key: "WT",
+            name: "Wtorek"
+        },
+        {
+            key: "SR",
+            name: "Środa"
+        },
+        {
+            key: "CZ",
+            name: "Czwartek"
+        },
+        {
+            key: "PT",
+            name: "Piątek"
+        },
+        {
+            key: "SO",
+            name: "Sobota"
+        },
+        {
+            key: "ND",
+            name: "Niedziela"
+        }
+    ]
 
     const toggleDay = (day: string) => {
         if (expandedDay === day) {
@@ -48,7 +79,7 @@ const ScheduleTable: React.FC<IScheduleView> = ({
     const toggleHour = (dayNumber: number, index: number) => {
         if (selectedEmployee) {
             let newEmployees: IEmployee[]
-            if(schedule[dayNumber].hours[index].employees.map(employee => employee.id).includes(selectedEmployee.id)) {
+            if (schedule[dayNumber].hours[index].employees.map(employee => employee.id).includes(selectedEmployee.id)) {
                 newEmployees = schedule[dayNumber].hours[index].employees.filter(employee => employee.id !== selectedEmployee.id)
             } else {
                 newEmployees = [...schedule[dayNumber].hours[index].employees]
@@ -79,22 +110,14 @@ const ScheduleTable: React.FC<IScheduleView> = ({
     const amountOfEmployees = (dayNumber: number, index: number) => schedule[dayNumber].hours[index].employees.length
     const requireEmployees = (dayNumber: number, index: number) => schedule[dayNumber].hours[index].require
 
-    useEffect(() => {
-
-    }, [schedule])
-
     return (
         <div className={styles.table}>
             <div className={styles.thead}>
                 <div className={styles.tr}>
                     <div className={styles.th}></div>
-                    <div className={`${styles.td} ${styles.th}`} onClick={() => toggleDay("PN")}>Poniedziałek</div>
-                    <div className={`${styles.td} ${styles.th}`} onClick={() => toggleDay("WT")}>Wtorek</div>
-                    <div className={`${styles.td} ${styles.th}`} onClick={() => toggleDay("SR")}>Środa</div>
-                    <div className={`${styles.td} ${styles.th}`} onClick={() => toggleDay("CZ")}>Czwartek</div>
-                    <div className={`${styles.td} ${styles.th}`} onClick={() => toggleDay("PT")}>Piątek</div>
-                    <div className={`${styles.td} ${styles.th}`} onClick={() => toggleDay("SO")}>Sobota</div>
-                    <div className={`${styles.td} ${styles.th}`} onClick={() => toggleDay("ND")}>Niedziela</div>
+                    {allWeekDays.map((weekDay: IWeekDay) => (
+                        <div className={`${styles.td} ${styles.th}`} onClick={() => toggleDay(weekDay.key)}>{`${weekDay.name}`}</div>
+                    )) as React.HTMLAttributes<HTMLDivElement>}
                 </div>
             </div>
             <div className={styles.tbody}>
@@ -103,27 +126,13 @@ const ScheduleTable: React.FC<IScheduleView> = ({
                         ? schedule[0].hours.map((element: IWorkingHour, index) => (
                             <div className={styles.tr}>
                                 <div className={styles.th}>{`${element.hour}`}</div>
-                                <div
-                                    className={`${getEmployeeClassName(0, index, selectedEmployee.id)} ${styles.td}`}
-                                    onClick={() => toggleHour(0, index)}></div>
-                                <div
-                                    className={`${getEmployeeClassName(1, index, selectedEmployee.id)} ${styles.td}`}
-                                    onClick={() => toggleHour(1, index)}></div>
-                                <div
-                                    className={`${getEmployeeClassName(2, index, selectedEmployee.id)} ${styles.td}`}
-                                    onClick={() => toggleHour(2, index)}></div>
-                                <div
-                                    className={`${getEmployeeClassName(3, index, selectedEmployee.id)} ${styles.td}`}
-                                    onClick={() => toggleHour(3, index)}></div>
-                                <div
-                                    className={`${getEmployeeClassName(4, index, selectedEmployee.id)} ${styles.td}`}
-                                    onClick={() => toggleHour(4, index)}></div>
-                                <div
-                                    className={`${getEmployeeClassName(5, index, selectedEmployee.id)} ${styles.td}`}
-                                    onClick={() => toggleHour(5, index)}></div>
-                                <div
-                                    className={`${getEmployeeClassName(6, index, selectedEmployee.id)} ${styles.td}`}
-                                    onClick={() => toggleHour(6, index)}></div>
+                                {allWeekDays.map((weekDay: IWeekDay, weekDayIndex: number) => (
+                                    <div
+                                        className={`${getEmployeeClassName(weekDayIndex, index, selectedEmployee.id)} ${styles.td}`}
+                                        onClick={() => toggleHour(weekDayIndex, index)}>
+                                            text
+                                    </div>
+                                )) as React.HTMLAttributes<HTMLDivElement>}
                             </div>
                           ))
                         : schedule[0].hours.map((element: IWorkingHour, index) => (
@@ -131,13 +140,9 @@ const ScheduleTable: React.FC<IScheduleView> = ({
                                 <div className={styles.th}>
                                     {`${element.hour < 10 ? "0" : ""}${element.hour}:00 - ${element.hour < 9 ? "0" : ""}${element.hour + 1}:00`}
                                 </div>
-                                <div className={`${getScheduleClassName("PN")} ${styles.td} ${setCellColor(0, index)}`}>{getCellValue(0, index)}</div>
-                                <div className={`${getScheduleClassName("WT")} ${styles.td} ${setCellColor(1, index)}`}>{getCellValue(1, index)}</div>
-                                <div className={`${getScheduleClassName("SR")} ${styles.td} ${setCellColor(2, index)}`}>{getCellValue(2, index)}</div>
-                                <div className={`${getScheduleClassName("CZ")} ${styles.td} ${setCellColor(3, index)}`}>{getCellValue(3, index)}</div>
-                                <div className={`${getScheduleClassName("PT")} ${styles.td} ${setCellColor(4, index)}`}>{getCellValue(4, index)}</div>
-                                <div className={`${getScheduleClassName("SO")} ${styles.td} ${setCellColor(5, index)}`}>{getCellValue(5, index)}</div>
-                                <div className={`${getScheduleClassName("ND")} ${styles.td} ${setCellColor(6, index)}`}>{getCellValue(6, index)}</div>
+                                {allWeekDays.map((weekDay: IWeekDay, weekDayIndex: number) => (
+                                    <div className={`${getScheduleClassName(weekDay.key)} ${styles.td} ${setCellColor(weekDayIndex, index)}`}>{getCellValue(weekDayIndex, index)}</div>
+                                )) as React.HTMLAttributes<HTMLDivElement>}
                             </div>
                           ))
                 }

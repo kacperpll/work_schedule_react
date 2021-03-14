@@ -44,11 +44,9 @@
 @keyframes expand {
     from {
         width: 50px;
-        // color: white;
     }
     to {
         width: calc(100% - 100px);
-        // color: black;
     }
 }
 

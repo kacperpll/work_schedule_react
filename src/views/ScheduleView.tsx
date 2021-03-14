@@ -1,11 +1,13 @@
 import React from 'react'
 import ScheduleTable from './components/ScheduleTable/ScheduleTable'
 import { IScheduleView } from '../models/ScheduleView.models'
+import EmployeeList from './components/EmployeeList/EmployeeList'
 import styles from './ScheduleView.module.scss'
 
 const ScheduleView: React.FC<IScheduleView> = ({
     schedule,
-    setSchedule
+    setSchedule,
+    employees
 }) => {
 
     console.log("schedule", schedule)
@@ -16,9 +18,8 @@ const ScheduleView: React.FC<IScheduleView> = ({
                 Jakis button
             </div>
             <div className={styles.bottom}>
-                <div className={styles.employeeList}>
-                    Lista pracownikow
-                </div>
+                <EmployeeList
+                    employees={employees}/>
                 <ScheduleTable
                     schedule={schedule}
                     setSchedule={setSchedule} />
