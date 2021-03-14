@@ -25,7 +25,7 @@ const EmployeeList: React.FC<IEmployeeList> = ({
                         employees.map((employee: IEmployee) => (
                             <li
                                 key={employee.id}
-                                className={`${styles.listItem} ${selectedEmployee?.id === employee.id && styles.selectedListItem}`}
+                                className={`${styles.listItem} ${selectedEmployee?.id === employee.id ? styles.selectedListItem : ""}`}
                                 onClick={() => (toggleEmployee(employee))}>
                                 {`${employee.name}`}
                             </li>

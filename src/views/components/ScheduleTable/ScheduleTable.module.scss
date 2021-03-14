@@ -39,7 +39,7 @@
 
 .expanded {
     flex: none;
-    animation: expand 1s forwards;
+    animation: expand 0.8s forwards;
 }
 
 @keyframes expand {
@@ -69,4 +69,12 @@
 
 .badAmount {
     background: #FF0000;
+}
+
+.selectedListItem {
+    background: #FFD1B2;
+}
+
+.td.th:hover {
+    background: #b9b9b926;
 }

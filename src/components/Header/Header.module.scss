@@ -18,12 +18,12 @@
     width: 150px;
     height: 100px;
     font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 
     .headerLogo_letter {
         position: absolute;
         top: -9px;
         left: 0;
-        z-index: 0;
         color: #FF6803;
         font-size: 80px;
     }
@@ -32,7 +32,6 @@
         position: absolute;
         top: 17px;
         left: 41px;
-        z-index: 1;
         color: #3D3D3D;
         font-size: 46px;
     }
