@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
-import { IWorkingHour, IScheduleView, IEmployee } from '../../../models/ScheduleView.models'
+import React, { useState, useEffect } from 'react'
+import { IWorkingHour, IScheduleView, IEmployee, IWorkingDay } from '../../../models/ScheduleView.models'
 import styles from './ScheduleTable.module.scss'
 
 const ScheduleTable: React.FC<IScheduleView> = ({
-    schedule
+    schedule,
+    setSchedule
 }) => {
     const [expandedDay, setExpandedDay] = useState<string>("")
     const [selectedEmployee, setSelectedEmployee] = useState<IEmployee | null>(null)
@@ -20,7 +21,9 @@ const ScheduleTable: React.FC<IScheduleView> = ({
 
     const getEmployeeClassName = (dayNumber: number, index: number, employeeId: number) => {
         return (
-            checkEmployeeWorkStatus(dayNumber, index, employeeId) && styles.selected
+            checkEmployeeWorkStatus(dayNumber, index, employeeId)
+                ? styles.selected
+                : styles.full
         )
     }
 
@@ -31,8 +34,54 @@ const ScheduleTable: React.FC<IScheduleView> = ({
     }
 
     const getCellValue = (dayNumber: number, index: number) => (
-        `${schedule[dayNumber].hours[index].employees.length} / ${schedule[dayNumber].hours[index].require}`
+        `${amountOfEmployees(dayNumber, index)} / ${requireEmployees(dayNumber, index)}`
     )
+
+    const setCellColor = (dayNumber: number, index: number) => (
+        amountOfEmployees(dayNumber, index) === requireEmployees(dayNumber, index) && amountOfEmployees(dayNumber, index) !== 0
+            ? styles.full
+            : amountOfEmployees(dayNumber, index) === 0 || amountOfEmployees(dayNumber, index) > requireEmployees(dayNumber, index)
+                ? styles.badAmount
+                : styles.notFull
+    )
+
+    const toggleHour = (dayNumber: number, index: number) => {
+        if (selectedEmployee) {
+            let newEmployees: IEmployee[]
+            if(schedule[dayNumber].hours[index].employees.map(employee => employee.id).includes(selectedEmployee.id)) {
+                newEmployees = schedule[dayNumber].hours[index].employees.filter(employee => employee.id !== selectedEmployee.id)
+            } else {
+                newEmployees = [...schedule[dayNumber].hours[index].employees]
+                newEmployees.push(selectedEmployee)
+            }
+            const newSchedule: IWorkingDay[] = [
+                ...schedule.map((day, dayIndex) => (
+                    dayIndex === dayNumber
+                        ? {
+                            ...day,
+                            hours: [...day.hours.map((hour, hourIndex) => (
+                                hourIndex === index
+                                    ? {
+                                        ...hour,
+                                        employees: newEmployees}
+                                    : hour
+                            ))]
+                        }
+                        : day
+                    )
+                ),
+            ]
+
+            setSchedule(newSchedule)
+        }
+    }
+
+    const amountOfEmployees = (dayNumber: number, index: number) => schedule[dayNumber].hours[index].employees.length
+    const requireEmployees = (dayNumber: number, index: number) => schedule[dayNumber].hours[index].require
+
+    useEffect(() => {
+
+    }, [schedule])
 
     return (
         <div className={styles.table}>
@@ -52,36 +101,43 @@ const ScheduleTable: React.FC<IScheduleView> = ({
                 {
                     selectedEmployee
                         ? schedule[0].hours.map((element: IWorkingHour, index) => (
-                            <tr>
-                                <th>{`${element.hour}`}</th>
-                                {/* <td className={getEmployeeClassName("PN")}>
-                                </td>
-                                <td className={getEmployeeClassName("WT")}>
-                                </td>
-                                <td className={getEmployeeClassName("SR")}>
-                                </td>
-                                <td className={getEmployeeClassName("CZ")}>
-                                </td>
-                                <td className={getEmployeeClassName("PT")}>
-                                </td>
-                                <td className={getEmployeeClassName("SO")}>
-                                </td>
-                                <td className={getEmployeeClassName("ND")}>
-                                </td> */}
-                            </tr>
+                            <div className={styles.tr}>
+                                <div className={styles.th}>{`${element.hour}`}</div>
+                                <div
+                                    className={`${getEmployeeClassName(0, index, selectedEmployee.id)} ${styles.td}`}
+                                    onClick={() => toggleHour(0, index)}></div>
+                                <div
+                                    className={`${getEmployeeClassName(1, index, selectedEmployee.id)} ${styles.td}`}
+                                    onClick={() => toggleHour(1, index)}></div>
+                                <div
+                                    className={`${getEmployeeClassName(2, index, selectedEmployee.id)} ${styles.td}`}
+                                    onClick={() => toggleHour(2, index)}></div>
+                                <div
+                                    className={`${getEmployeeClassName(3, index, selectedEmployee.id)} ${styles.td}`}
+                                    onClick={() => toggleHour(3, index)}></div>
+                                <div
+                                    className={`${getEmployeeClassName(4, index, selectedEmployee.id)} ${styles.td}`}
+                                    onClick={() => toggleHour(4, index)}></div>
+                                <div
+                                    className={`${getEmployeeClassName(5, index, selectedEmployee.id)} ${styles.td}`}
+                                    onClick={() => toggleHour(5, index)}></div>
+                                <div
+                                    className={`${getEmployeeClassName(6, index, selectedEmployee.id)} ${styles.td}`}
+                                    onClick={() => toggleHour(6, index)}></div>
+                            </div>
                           ))
                         : schedule[0].hours.map((element: IWorkingHour, index) => (
                             <div className={styles.tr}>
                                 <div className={styles.th}>
                                     {`${element.hour < 10 ? "0" : ""}${element.hour}:00 - ${element.hour < 9 ? "0" : ""}${element.hour + 1}:00`}
                                 </div>
-                                <div className={`${getScheduleClassName("PN")} ${styles.td}`}>{getCellValue(0, index)}</div>
-                                <div className={`${getScheduleClassName("WT")} ${styles.td}`}>{getCellValue(1, index)}</div>
-                                <div className={`${getScheduleClassName("SR")} ${styles.td}`}>{getCellValue(2, index)}</div>
-                                <div className={`${getScheduleClassName("CZ")} ${styles.td}`}>{getCellValue(3, index)}</div>
-                                <div className={`${getScheduleClassName("PT")} ${styles.td}`}>{getCellValue(4, index)}</div>
-                                <div className={`${getScheduleClassName("SO")} ${styles.td}`}>{getCellValue(5, index)}</div>
-                                <div className={`${getScheduleClassName("ND")} ${styles.td}`}>{getCellValue(6, index)}</div>
+                                <div className={`${getScheduleClassName("PN")} ${styles.td} ${setCellColor(0, index)}`}>{getCellValue(0, index)}</div>
+                                <div className={`${getScheduleClassName("WT")} ${styles.td} ${setCellColor(1, index)}`}>{getCellValue(1, index)}</div>
+                                <div className={`${getScheduleClassName("SR")} ${styles.td} ${setCellColor(2, index)}`}>{getCellValue(2, index)}</div>
+                                <div className={`${getScheduleClassName("CZ")} ${styles.td} ${setCellColor(3, index)}`}>{getCellValue(3, index)}</div>
+                                <div className={`${getScheduleClassName("PT")} ${styles.td} ${setCellColor(4, index)}`}>{getCellValue(4, index)}</div>
+                                <div className={`${getScheduleClassName("SO")} ${styles.td} ${setCellColor(5, index)}`}>{getCellValue(5, index)}</div>
+                                <div className={`${getScheduleClassName("ND")} ${styles.td} ${setCellColor(6, index)}`}>{getCellValue(6, index)}</div>
                             </div>
                           ))
                 }

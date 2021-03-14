@@ -16,7 +16,8 @@ function App() {
         <div className="root">
             <Header user={user}/>
             <ScheduleView
-                schedule={schedule} />
+                schedule={schedule}
+                setSchedule={setSchedule} />
         </div>
     )
 }

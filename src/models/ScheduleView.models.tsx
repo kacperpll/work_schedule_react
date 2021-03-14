@@ -1,5 +1,8 @@
+import React from "react";
+
 export interface IScheduleView {
     schedule: IWorkingDay[],
+    setSchedule: React.Dispatch<React.SetStateAction<IWorkingDay[]>>
 }
 
 export interface IWorkingDay {

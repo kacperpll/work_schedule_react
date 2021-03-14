@@ -44,11 +44,11 @@
 @keyframes expand {
     from {
         width: 50px;
-        color: white;
+        // color: white;
     }
     to {
         width: calc(100% - 100px);
-        color: black;
+        // color: black;
     }
 }
 
@@ -57,5 +57,13 @@
 }
 
 .full {
-    background: purple;
+    background:#08FF00;
+}
+
+.notFull {
+    background: #FFA200;
+}
+
+.badAmount {
+    background: #FF0000;
 }

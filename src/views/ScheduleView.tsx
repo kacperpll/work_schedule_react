@@ -4,7 +4,8 @@ import { IScheduleView } from '../models/ScheduleView.models'
 import styles from './ScheduleView.module.scss'
 
 const ScheduleView: React.FC<IScheduleView> = ({
-    schedule
+    schedule,
+    setSchedule
 }) => {
 
     console.log("schedule", schedule)
@@ -19,7 +20,8 @@ const ScheduleView: React.FC<IScheduleView> = ({
                     Lista pracownikow
                 </div>
                 <ScheduleTable
-                    schedule={schedule} />
+                    schedule={schedule}
+                    setSchedule={setSchedule} />
             </div>
         </div>
     )
