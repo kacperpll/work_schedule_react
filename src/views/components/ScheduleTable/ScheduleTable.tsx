@@ -71,25 +71,10 @@ const ScheduleTable: React.FC<IScheduleTable> = ({
                 newEmployees = [...schedule[dayNumber].hours[index].employees]
                 newEmployees.push(selectedEmployee)
             }
-            const newSchedule: IWorkingDay[] = [
-                ...schedule.map((day, dayIndex) => (
-                    dayIndex === dayNumber
-                        ? {
-                            ...day,
-                            hours: [...day.hours.map((hour, hourIndex) => (
-                                hourIndex === index
-                                    ? {
-                                        ...hour,
-                                        employees: newEmployees}
-                                    : hour
-                            ))]
-                        }
-                        : day
-                    )
-                ),
-            ]
 
-            setSchedule(newSchedule)
+            schedule[dayNumber].hours[index].employees = newEmployees
+
+            setSchedule([...schedule])
         }
     }
 
