@@ -1,5 +1,7 @@
+@import '../../variables';
+
 .header {
-    background: #FFD1B2;
+    background: $light-orange;
     display: flex;
     height: 90px;
     padding: 20px 50px;
@@ -24,7 +26,7 @@
         position: absolute;
         top: -9px;
         left: 0;
-        color: #FF6803;
+        color: $main-theme-color;
         font-size: 80px;
     }
 
@@ -32,7 +34,7 @@
         position: absolute;
         top: 17px;
         left: 41px;
-        color: #3D3D3D;
+        color: $dark-grey;
         font-size: 46px;
     }
 }

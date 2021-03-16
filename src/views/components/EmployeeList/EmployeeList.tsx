@@ -20,7 +20,7 @@ const EmployeeList: React.FC<IEmployeeList> = ({
         <div className={styles.employeeListWrapper}>
             <p>Lista pracowników</p>
             <div className={styles.employeeList}>
-                <ul className={styles.list}>
+                <ul className={`${styles.list} ${styles.scroll}`}>
                     {
                         employees.map((employee: IEmployee) => (
                             <li

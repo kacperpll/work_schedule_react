@@ -1,3 +1,5 @@
+@import '../../../variables';
+
 .table {
     display: flex;
     flex-wrap: wrap;
@@ -21,8 +23,10 @@
     align-items: center;
     display: flex;
     justify-content: center;
-    background: aliceblue;
-    cursor: pointer;
+
+    &.th {
+        cursor: pointer;
+    }
 }
 
 .th {
@@ -45,36 +49,36 @@
 @keyframes expand {
     from {
         width: 50px;
-        color: rgba(0, 0, 0, 0.0);
+        color: rgba(black, 0.0);
         height: 31px;
     }
     to {
         width: calc(100% - 100px);
-        color: rgba(0, 0, 0, 1);
+        color: rgba(black, 1);
         height: auto;
     }
 }
 
 .notIncluded {
-    background: grey;
+    background: $main-grey;
 }
 
 .full {
-    background:#08FF00;
+    background:$main-green;
 }
 
 .notFull {
-    background: #FFA200;
+    background: $main-orange;
 }
 
 .badAmount {
-    background: #FF0000;
+    background: $main-red;
 }
 
 .selectedListItem {
-    background: #FFD1B2;
+    background: $light-orange;
 }
 
 .td.th:hover {
-    background: #b9b9b926;
+    background: $light-grey;
 }
